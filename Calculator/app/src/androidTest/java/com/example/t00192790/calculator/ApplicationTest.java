@@ -1,4 +1,4 @@
-package com.example.vancha.calculator;
+package com.example.t00192790.calculator;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
