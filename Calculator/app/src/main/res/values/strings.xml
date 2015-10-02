@@ -23,7 +23,7 @@
     <string name="memc">MC</string>
     <string name="memr">MR</string>
     <string name="memminus">M-</string>
-    <string name="mplus">M+</string>
+    <string name="memplus">M+</string>
 
     <string name="action_settings">Settings</string>
 </resources>
