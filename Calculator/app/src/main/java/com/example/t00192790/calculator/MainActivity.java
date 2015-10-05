@@ -7,17 +7,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView tvmain;
+    Button num_1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button num_1 = (Button)findViewById(R.id.button);
+        num_1 = (Button)findViewById(R.id.button19);
         num_1.setOnClickListener(num_handler);
+        tvmain = (TextView) findViewById(R.id.textViewmain);
 
     }
     private OnClickListener num_handler = new OnClickListener()
@@ -25,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Toast.makeText(getBaseContext(), "Number Handler", Toast.LENGTH_SHORT).show();
+            Button b1 = (Button) v;
+            tvmain.append(b1.getText());
+
         }
     };
 

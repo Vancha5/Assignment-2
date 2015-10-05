@@ -12,19 +12,21 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:layout_gravity="top">
+        android:layout_weight="0.15"
+        android:layout_gravity="top"
+        >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/textView"
+            android:id="@+id/textViewmain"
             android:textColor="#ffffff"
             android:gravity="end"
             android:textSize="40sp"
             android:hint="@string/zero"
-            android:textColorHint="#ffffff" />
+            android:textColorHint="#ffffff"
+            android:maxLength="10" />
     </LinearLayout>
 
     <LinearLayout
@@ -137,7 +139,8 @@
                 android:id="@+id/button10"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -146,7 +149,8 @@
                 android:id="@+id/button11"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -155,7 +159,8 @@
                 android:id="@+id/button12"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -181,7 +186,8 @@
                 android:id="@+id/button13"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -190,7 +196,8 @@
                 android:id="@+id/button14"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -199,7 +206,8 @@
                 android:id="@+id/button15"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -225,7 +233,8 @@
                 android:id="@+id/button16"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -234,7 +243,8 @@
                 android:id="@+id/button17"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -243,7 +253,8 @@
                 android:id="@+id/button18"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -269,7 +280,8 @@
                 android:id="@+id/button19"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -278,7 +290,8 @@
                 android:id="@+id/button20"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="onClick" />
 
             <Button
                 android:layout_width="wrap_content"
