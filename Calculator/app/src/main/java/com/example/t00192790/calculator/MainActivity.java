@@ -14,26 +14,96 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView tvmain;
-    Button num_1;
+   //button num_1;
+    double value = 0;
+    double result = 0;
+    String op;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        num_1 = (Button)findViewById(R.id.button19);
-        num_1.setOnClickListener(num_handler);
+       // num_1 = (Button)findViewById(R.id.button19);
+        //num_1.setOnClickListener(num_handler);
         tvmain = (TextView) findViewById(R.id.textViewmain);
 
     }
-    private OnClickListener num_handler = new OnClickListener()
-    {
-        @Override
+
         public void onClick(View v) {
             Toast.makeText(getBaseContext(), "Number Handler", Toast.LENGTH_SHORT).show();
             Button b1 = (Button) v;
             tvmain.append(b1.getText());
+        }
+
+        public void opOnClick(View v) {
+            Button b2 = (Button) v;
+            op = b2.getText().toString();
+            if(value == 0) {
+                value = Double.parseDouble(tvmain.getText().toString());
+                tvmain.setText("");
+            }
+            else {
+                value = calc();
+
+            }
+
+
 
         }
-    };
+
+        public void clear(View v){
+            tvmain.setText("");
+            value=0;
+            op="";
+        }
+        public void partClear(View v){
+            tvmain.setText("");
+        }
+        public void del(View v)
+        {
+            String str = tvmain.getText().toString();
+            if (str.length() > 0) {
+                str = str.substring(0, str.length()-1);
+            }
+            tvmain.setText(str);
+        }
+
+        public void sign(View v)
+        {
+            if(Double.parseDouble(tvmain.getText().toString()) > 0)
+                tvmain.setText("-" + tvmain.getText());
+
+        }
+        public void calcButton(){
+            double test = calc();
+        }
+
+
+        public double calc(){
+
+            if(op.equals("+"))
+            {
+                result = value +  Double.parseDouble(tvmain.getText().toString());
+            }
+            else if(op.equals("-"))
+            {
+                result = value - Double.parseDouble(tvmain.getText().toString());
+            }
+            else if(op.equals("*"))
+            {
+                result = value * Double.parseDouble(tvmain.getText().toString());
+            }
+            else if(op.equals("/"))
+            {
+                result = value / Double.parseDouble(tvmain.getText().toString());
+            }
+
+            tvmain.setText(String.valueOf(result));
+            return result;
+
+
+        }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

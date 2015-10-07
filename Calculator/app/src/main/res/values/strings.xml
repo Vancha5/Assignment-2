@@ -17,7 +17,7 @@
     <string name="plus">+</string>
     <string name="multiply">*</string>
     <string name="divide">/</string>
-    <string name="delete">~~</string>
+    <string name="delete">DEL</string>
     <string name="clear">C</string>
     <string name="cleare">CE</string>
     <string name="memc">MC</string>
