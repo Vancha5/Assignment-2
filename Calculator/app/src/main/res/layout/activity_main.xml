@@ -16,17 +16,35 @@
         android:layout_gravity="top"
         >
 
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/textViewmain"
-            android:textColor="#ffffff"
-            android:gravity="end"
-            android:textSize="40sp"
-            android:hint="@string/zero"
-            android:textColorHint="#ffffff"
-            android:maxLength="10" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/tvhistory"
+                android:textColor="#ffffff"
+                android:gravity="end"
+                android:textSize="40sp"
+                android:textColorHint="#ffffff"
+                android:maxLength="10" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textViewmain"
+                android:textColor="#ffffff"
+                android:gravity="end"
+                android:textSize="40sp"
+                android:hint="@string/zero"
+                android:textColorHint="#ffffff"
+                android:maxLength="10" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -52,7 +70,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="memclear" />
+                android:onClick="memclear"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -62,7 +81,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="memadd" />
+                android:onClick="memadd"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -72,7 +92,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="memsub" />
+                android:onClick="memsub"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -82,7 +103,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="memrecall" />
+                android:onClick="memrecall"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,7 +122,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="clear" />
+                android:onClick="clear"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -110,7 +133,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="partClear" />
+                android:onClick="partClear"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -120,7 +144,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="opOnClick" />
+                android:onClick="opOnClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -130,7 +155,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="del" />
+                android:onClick="del"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -148,7 +174,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -158,7 +185,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -168,7 +196,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -178,7 +207,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="opOnClick" />
+                android:onClick="opOnClick"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -196,7 +226,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -206,7 +237,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -216,7 +248,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -226,7 +259,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="opOnClick" />
+                android:onClick="opOnClick"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -244,7 +278,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -254,7 +289,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -264,7 +300,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -274,7 +311,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="opOnClick" />
+                android:onClick="opOnClick"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -292,7 +330,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -302,7 +341,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -312,7 +352,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="sign" />
+                android:onClick="sign"
+                android:textSize="30sp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -322,7 +363,8 @@
                 android:layout_weight="1"
                 android:background="#f903030c"
                 android:textColor="#ffffff"
-                android:onClick="calcButton" />
+                android:onClick="calcButton"
+                android:textSize="30sp" />
         </LinearLayout>
 
     </LinearLayout>

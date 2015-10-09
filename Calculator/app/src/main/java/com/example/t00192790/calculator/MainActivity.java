@@ -12,17 +12,21 @@ import android.widget.Toast;
 
 import java.io.IOError;
 import java.io.IOException;
+import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
 
     TextView tvmain;
+    TextView tvhistory;
    //button num_1;
     double value;
     double result;
     String op;
     String str;
     double memvalue;
+    String[] history;
+    int count;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,21 +34,25 @@ public class MainActivity extends AppCompatActivity {
        // num_1 = (Button)findViewById(R.id.button19);
         //num_1.setOnClickListener(num_handler);
         tvmain = (TextView) findViewById(R.id.textViewmain);
+        tvhistory = (TextView) findViewById(R.id.tvhistory);
         tvmain.setText("");
         value = 0;
         result = 0;
         op = "";
         str = tvmain.getText().toString();
         memvalue = 0;
+        history = new String[100];
+        count = 0;
 
 
     }
 
         public void onClick(View v) {
             Button b1 = (Button) v;
-
+            str = tvmain.getText().toString();
             if (str.contains(".")) { //checks if the string contains a decimal, if it does 0's are ok
                // if (Double.parseDouble(tvmain.getText().toString()) == 0)
+                if(!b1.getText().toString().equals("."))
                     tvmain.append(b1.getText());
             }
             else if(str != null && !str.isEmpty() && !str.equals("-")) {
@@ -91,21 +99,27 @@ public class MainActivity extends AppCompatActivity {
         public void opOnClick(View v) {
             Button b2 = (Button) v;
             str = tvmain.getText().toString();
+            history[count] = str;
+            count++;
             if (!str.isEmpty() && !str.equals(null)) {
 
                 op = b2.getText().toString();
-
+                history[count] = op;
+                count++;
                 if (value == 0) { //if the string empty then get the value and set the text to empty string
                     value = Double.parseDouble(str);
+                    result = value;
                     tvmain.setText("");
-                    //Toast.makeText(getApplicationContext(), "opOnClick op is not previously set", Toast.LENGTH_SHORT).show();
-                } else if (value == Double.parseDouble(str)) { //if the value is not zero then call the calc method, calc sets the text to the result of calc
-                    tvmain.setText("");
-                } else {
-                    value = calc();
-                    if (value != 0) {
-                        tvmain.setText(String.valueOf(value));
-                        //  tvmain.setHint(String.valueOf(value));
+                    Toast.makeText(getApplicationContext(), "set value", Toast.LENGTH_SHORT).show();
+                } //else if (value == Double.parseDouble(str)) { //if the value is not zero then call the calc method, calc sets the text to the result of calc
+                    //tvmain.setText("");
+                //}
+                 else {
+                    result = calc();
+                    if (result != 0) {
+                        //tvmain.setText(String.valueOf(result));
+                        tvmain.setText("");
+                        Toast.makeText(getApplicationContext(), "result = calc()", Toast.LENGTH_SHORT).show();
                     } else {
                         tvmain.setText("");
                         Toast.makeText(getApplicationContext(), "opOnClick value not empty op set to empty string", Toast.LENGTH_SHORT).show();
@@ -115,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }
+            tvhistory.setText(Arrays.toString(history));
         }
 
 
@@ -141,11 +156,15 @@ public class MainActivity extends AppCompatActivity {
             else if (tempString.length() > 0) {
 
                 tempString = tempString.substring(0, tempString.length()-1);
+                history[count] = "";
+                count--;
+
                // Toast.makeText(getApplicationContext(), "str else if", Toast.LENGTH_SHORT).show();
                 //Toast.makeText(getApplicationContext(), "ignored if statements", Toast.LENGTH_SHORT).show();
 
             }
             tvmain.setText(tempString);
+            tvhistory.setText(Arrays.toString(history));
 
         }
 
@@ -173,9 +192,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         public void calcButton(View v){
-             value = calc();
-            if(value != 0)
-             tvmain.setText(String.valueOf(value));
+             result = calc();
+            if(result != 0)
+             tvmain.setText(String.valueOf(result));
             else
                 tvmain.setText("");
         }
@@ -184,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
         public double calc(){
             str = tvmain.getText().toString();
             if(!str.isEmpty() && !str.equals(null) && !op.equals("")){
-
+                Toast.makeText(getApplicationContext(), "value is" + value + ".", Toast.LENGTH_SHORT).show();
             if (op.equals("+")) {
                 result = result + value;
             } else if (op.equals("-")) {
@@ -206,7 +225,13 @@ public class MainActivity extends AppCompatActivity {
 
 
           //  tvmain.setText(String.valueOf(result));
+                history[count] = op;
+                count++;
+                history[count] = String.valueOf(value);
+                count++;
+                tvhistory.setText(history.toString());
                 return result;
+
         }
             else if(!str.isEmpty() && !str.equals(null)) {
 
