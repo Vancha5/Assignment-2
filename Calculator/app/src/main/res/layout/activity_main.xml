@@ -307,7 +307,8 @@
                 android:id="@+id/button21"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="sign" />
 
             <Button
                 android:layout_width="wrap_content"
