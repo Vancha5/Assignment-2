@@ -51,7 +51,8 @@
                 android:id="@+id/button4"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="memclear" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -60,7 +61,8 @@
                 android:id="@+id/button5"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="memadd" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -69,7 +71,8 @@
                 android:id="@+id/button6"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="memsub" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -78,7 +81,8 @@
                 android:id="@+id/button"
                 android:layout_weight="1"
                 android:background="#f903030c"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:onClick="memrecall" />
         </LinearLayout>
 
         <LinearLayout

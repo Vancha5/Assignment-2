@@ -24,6 +24,7 @@
     <string name="memr">MR</string>
     <string name="memminus">M-</string>
     <string name="memplus">M+</string>
+    <string name="test"></string>
 
     <string name="action_settings">Settings</string>
 </resources>

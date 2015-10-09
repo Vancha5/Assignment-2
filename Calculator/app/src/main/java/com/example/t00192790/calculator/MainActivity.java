@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     double result;
     String op;
     String str;
-    double tempvalue;
+    double memvalue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         result = 0;
         op = "";
         str = tvmain.getText().toString();
-        tempvalue = 0;
+        memvalue = 0;
 
 
     }
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                // if (Double.parseDouble(tvmain.getText().toString()) == 0)
                     tvmain.append(b1.getText());
             }
-            else if(str != null && !str.isEmpty()) {
+            else if(str != null && !str.isEmpty() && !str.equals("-")) {
                 if (Double.parseDouble(str) == 0) //checks if the value is equal to zero, if it is I need an if to not allow zeros
                 {
                     if (b1.getText().toString().equals("0"))
@@ -62,12 +62,35 @@ public class MainActivity extends AppCompatActivity {
                 tvmain.append(b1.getText());
         }
 
+        public void memadd(View v){
+            str = tvmain.getText().toString();
+            if(str != null && !str.isEmpty()) {
+                memvalue = memvalue + Double.parseDouble(str);
+                //Toast.makeText(getApplicationContext(), String.valueOf(memvalue), Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        public void memsub(View v){
+            str = tvmain.getText().toString();
+            if(str != null && !str.isEmpty())
+                memvalue =  memvalue - Double.parseDouble(str);
+        }
+
+        public void memclear(View v){
+            memvalue = 0;
+        }
+
+        public void memrecall(View v){
+            Toast.makeText(getApplicationContext(), String.valueOf(memvalue), Toast.LENGTH_SHORT).show();
+            tvmain.setText(String.valueOf(memvalue));
+        }
+
+
 
 
         public void opOnClick(View v) {
             Button b2 = (Button) v;
             str = tvmain.getText().toString();
-            tempvalue = 0;
             if (!str.isEmpty() && !str.equals(null)) {
 
                 op = b2.getText().toString();
@@ -78,10 +101,9 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), "opOnClick op is not previously set", Toast.LENGTH_SHORT).show();
                 } else if (value == Double.parseDouble(str)) { //if the value is not zero then call the calc method, calc sets the text to the result of calc
                     tvmain.setText("");
-                    tempvalue = Double.parseDouble(str);
                 } else {
                     value = calc();
-                    if (tempvalue != 0) {
+                    if (value != 0) {
                         tvmain.setText(String.valueOf(value));
                         //  tvmain.setHint(String.valueOf(value));
                     } else {
@@ -89,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "opOnClick value not empty op set to empty string", Toast.LENGTH_SHORT).show();
 
                     }
-                tempvalue = 0;
+
 
                 }
             }
@@ -129,15 +151,25 @@ public class MainActivity extends AppCompatActivity {
 
         public void sign(View v)
         {
+            str = tvmain.getText().toString();
             String tempString = "";
-            if(!str.isEmpty() && str !=null) {
-                if (Double.parseDouble(str) > 0 && (str.length() < 1))
+            if(!str.isEmpty() && str != null && !(str.contains("-"))) {
+                if (Double.parseDouble(str) > 0 && (str.length() > 0))
                     tvmain.setText("-" + str);
             }
-            else
+            else if(!str.isEmpty() && str != null && str.contains("-"))
             {
+                tempString = str.substring(1);
+                tvmain.setText(tempString);
+            }
+            else if(str.equals("-")){
+                tempString = "";
+                tvmain.setText(tempString);
+            }
+            else{
                 tempString = "-";
                 tvmain.setText(tempString);
+
             }
         }
         public void calcButton(View v){
@@ -150,18 +182,27 @@ public class MainActivity extends AppCompatActivity {
 
 
         public double calc(){
-
+            str = tvmain.getText().toString();
             if(!str.isEmpty() && !str.equals(null) && !op.equals("")){
 
             if (op.equals("+")) {
-                result = value + Double.parseDouble(str);
+                result = result + value;
             } else if (op.equals("-")) {
-                result = value - Double.parseDouble(str);
+                result = result - value;
             } else if (op.equals("*")) {
-                result = value * Double.parseDouble(str);
+                result = result * value;
             } else if (op.equals("/")) {
-                result = value / Double.parseDouble(str);
+                result = result / value;
             }
+              /*  if (op.equals("+")) {
+                    result = value + Double.parseDouble(str);
+                } else if (op.equals("-")) {
+                    result = value - Double.parseDouble(str);
+                } else if (op.equals("*")) {
+                    result = value * Double.parseDouble(str);
+                } else if (op.equals("/")) {
+                    result = value / Double.parseDouble(str);
+                }    */
 
 
           //  tvmain.setText(String.valueOf(result));
